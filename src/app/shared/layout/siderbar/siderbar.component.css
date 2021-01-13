@@ -1,0 +1,25 @@
+.page-sidebar{
+ 
+top:0;
+  position: fixed;
+  bottom: 0;
+  flex: 1 0 auto;
+  width: 16.875rem;
+  max-width: 16.875rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: flex;
+  z-index: 1002;
+  will-change: left, right;
+  background-color:#584475;
+  background-image: linear-gradient(270deg, rgba(178, 45, 226, 0.18), transparent);
+
+}
+
+.nav-function-fixed:not(.nav-function-top) .page-sidebar {
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+}

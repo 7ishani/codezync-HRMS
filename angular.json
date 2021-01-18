@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "codezync-HRMS"
+  "defaultProject": "codezync-HRMS",
+  "cli": {
+    "analytics": "6a2724bb-f44d-4517-9ce0-46cca4d289ef"
+  }
 }

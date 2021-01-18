@@ -4,9 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-
-import { HeaderComponent } from './sidebar/header/header.component';
-import { MenuComponent } from './sidebar/menu/menu.component';
 import { RouterModule } from '@angular/router';
 
 import { SiderbarComponent } from './shared/layout/siderbar/siderbar.component';
@@ -41,6 +38,7 @@ import { ViewCompensationComponent } from './features/pages/compensation/view-co
 import { AddCompensationComponent } from './features/pages/compensation/add-compensation/add-compensation.component';
 import { CompanyProfileComponent } from './features/pages/company-profile/company-profile.component';
 import { UpdateCompanyProfileComponent } from './features/pages/company-profile/update-company-profile/update-company-profile.component';
+import { PageFooterComponent } from './shared/layout/page-footer/page-footer.component';
 
 const appRoutes = [
   {path:'listDepartments',component:DepartmentComponent},
@@ -52,13 +50,6 @@ const appRoutes = [
 @NgModule({
   declarations: [
     AppComponent,
-
-    
-
-    HeaderComponent,
-    MenuComponent,
-
-
     SiderbarComponent,
     LogoComponent,
     ShortcutModelComponent,
@@ -85,7 +76,8 @@ const appRoutes = [
     ViewCompensationComponent,
     AddCompensationComponent,
     CompanyProfileComponent,
-    UpdateCompanyProfileComponent
+    UpdateCompanyProfileComponent,
+    PageFooterComponent
   ],
   imports: [
     BrowserModule,

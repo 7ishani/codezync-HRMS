@@ -1,0 +1,172 @@
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.modal-backdrop-transparent {
+  background: transparent;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2050;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+}
+.fade {
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.modal-dialog-top, .modal-dialog-bottom {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  min-width: 100%;
+}
+/* @media (min-width: 576px)
+.modal-dialog {
+  max-width: 500px;
+  margin: 1.75rem auto;
+} */
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+}
+
+.modal-dialog-top .modal-content, .modal-dialog-bottom .modal-content {
+  border-radius: 0px;
+  border: 0;
+}
+.modal-transparent .modal-content {
+  background: rgba(11, 39, 61, 0.85);
+}
+.modal-transparent .modal-content {
+  -webkit-box-shadow: 0 1px 15px 1px rgba(9, 97, 165, 0.3);
+  box-shadow: 0 1px 15px 1px rgba(9, 97, 165, 0.3);
+}
+.modal-content {
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+.modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: 0;
+}
+
+.modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.w-auto {
+  width: auto !important;
+}
+.h-auto {
+  height: auto !important;
+}
+.app-list {
+  margin: 0 auto;
+  display: block;
+  width: 21.875rem !important;
+  height: 22.5rem !important;
+  font-size: 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+.text-left {
+  text-align: left !important;
+}
+.p-0 {
+  padding: 0 !important;
+}
+
+.app-list-item {
+  height: 5.9375rem;
+  width: 6.25rem;
+  display: block;
+  text-decoration: none;
+  color: #666666;
+  margin: 10px 2px;
+  border: 1px solid transparent !important;
+  outline: none;
+  border-radius: 3px;
+  padding-top: 8px;
+  border-radius: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.text-white {
+  color: #fff !important;
+}
+
+.app-list-item .icon-stack {
+  font-size: 3.125rem;
+  margin-top: 4px;
+}
+.icon-stack {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.color-primary-500 {
+  color: #2198F3;
+}
+.opacity-100 {
+  opacity: 1;
+}
+.icon-stack-3x {
+  font-size: 1em;
+}
+.icon-stack-1x, .icon-stack-2x, .icon-stack-3x {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  line-height: inherit !important;
+}
+/* .fas, [data-icon]:before, [class^="base-"], [class*=" base-"] {
+  font-family: 'nextgen-icons';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+} */

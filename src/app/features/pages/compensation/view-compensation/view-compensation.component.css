@@ -59,10 +59,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 0.25rem;
 }
 
-.btn-primary{
+/* .btn-primary{
   background-color: #886ab5;
   border: #886ab5;
-}
+} */
 
 .page-content .panel {
   margin-bottom: 1.5rem;
@@ -70,6 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .panel {
+  min-width: fit-content;
   margin-left:2rem;
   margin-right: 2rem;
   display: -webkit-box;
@@ -216,6 +217,7 @@ select {
   color: #fff;
   background-color: #2198F3;
   border-color: #2198F3;
+  margin-right: 2rem;
 }
 
 .btn{

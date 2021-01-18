@@ -1,7 +1,7 @@
 import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
-//import { Store, createSelector } from '@ngrx/store';
+import { Store, createSelector } from '@ngrx/store';
 import { selectNavigationItems, NavigationItem } from 'src/app/store/navigation';
-//import { selectSettingsState } from 'src/app/store/settings';
+import { selectSettingsState } from 'src/app/store/settings';
 
 
 @Component({
@@ -12,16 +12,16 @@ import { selectNavigationItems, NavigationItem } from 'src/app/store/navigation'
 })
 export class NavComponent implements OnInit {
 
-  // vm$ = this.store.select(
-  //   createSelector(
-  //     selectNavigationItems,
-  //     selectSettingsState,
-  //     (items, settings) => ({ items, minified: settings.minifyNavigation })
-  //   )
-  // );
+  vm$ = this.store.select(
+    createSelector(
+      selectNavigationItems,
+      selectSettingsState,
+      (items, settings) => ({ items, minified: settings.minifyNavigation })
+    )
+  );
 
-  //constructor(private store: Store<any>) { }
-  constructor(){}
+  constructor(private store: Store<any>) { }
+  // constructor(){}
 
   trackByFn(idx: number, item: NavigationItem) {
     return item.title + '_' + idx;

@@ -4,7 +4,7 @@
 }
 
 .page-content-wrapper {
-  background-color:#EBDCF4;
+  background-color:#d3d1d4;
   display: flex;
     align-items: stretch;
     flex: 1 1 auto;
@@ -20,12 +20,17 @@
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
     font-size: 0.8125rem;
     letter-spacing: 0.1px;
-    padding-left:16.875rem ;
+    margin-left:16.875rem ;
+
 }
 
 .page-wrapper{
-  background-color: #EBDCF4;
-  height:fit-content;
+  background-color: #F3ECFA;
+  
+			box-shadow: 5px 0 20px 0px rgba(0, 0, 0, 0.1), -5px 0 20px 0px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+			position: relative;
+
 }
 
 .page-content{
@@ -48,4 +53,8 @@
   -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
+}
+
+.page-inner {
+  min-height: 100vh;
 }

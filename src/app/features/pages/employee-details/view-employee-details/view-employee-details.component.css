@@ -27,7 +27,7 @@
 .panel {
   min-width: fit-content;
   margin-left:2rem;
-  /* margin-right: 2rem; */
+  margin-right: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

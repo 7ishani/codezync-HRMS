@@ -10,7 +10,7 @@ import { selectSettingsState } from 'src/app/store/settings';
   styleUrls: ['./nav.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavComponent implements OnInit {
+export class NavComponent{
 
   vm$ = this.store.select(
     createSelector(
@@ -27,7 +27,5 @@ export class NavComponent implements OnInit {
     return item.title + '_' + idx;
   }
 
-  ngOnInit(): void {
-  }
 
 }

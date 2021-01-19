@@ -39,13 +39,22 @@ import { AddCompensationComponent } from './features/pages/compensation/add-comp
 import { CompanyProfileComponent } from './features/pages/company-profile/company-profile.component';
 import { UpdateCompanyProfileComponent } from './features/pages/company-profile/update-company-profile/update-company-profile.component';
 import { PageFooterComponent } from './shared/layout/page-footer/page-footer.component';
+import { EmployeeDetailsComponent } from './features/pages/employee-details/employee-details.component';
+import { SalaryTypeComponent } from './features/pages/salary-type/salary-type.component';
+import { ViewSalaryTypeComponent } from './features/pages/salary-type/view-salary-type/view-salary-type.component';
+import { AddSalaryTypeComponent } from './features/pages/salary-type/add-salary-type/add-salary-type.component';
+import { ViewEmployeeDetailsComponent } from './features/pages/employee-details/view-employee-details/view-employee-details.component';
+import { AddEmployeeDetailsComponent } from './features/pages/employee-details/add-employee-details/add-employee-details.component';
 
 const appRoutes = [
   {path:'listDepartments',component:DepartmentComponent},
   {path:'listEmployeeCategory', component: EmployeeCategoryComponent},
   {path:'listDesignation', component: DesignationComponent},
   {path:'listCompensatation',component: CompensationComponent},
-  {path:'updateCompanyProfile',component: UpdateCompanyProfileComponent}
+  {path:'updateCompanyProfile',component: UpdateCompanyProfileComponent},
+  {path:'listSalaryTypes', component: SalaryTypeComponent},
+  {path:'listEmployees', component: EmployeeDetailsComponent},
+  {path:'addEmployee', component: AddEmployeeDetailsComponent}
 ];
 @NgModule({
   declarations: [
@@ -77,7 +86,13 @@ const appRoutes = [
     AddCompensationComponent,
     CompanyProfileComponent,
     UpdateCompanyProfileComponent,
-    PageFooterComponent
+    PageFooterComponent,
+    EmployeeDetailsComponent,
+    SalaryTypeComponent,
+    ViewSalaryTypeComponent,
+    AddSalaryTypeComponent,
+    ViewEmployeeDetailsComponent,
+    AddEmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,

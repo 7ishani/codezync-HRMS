@@ -1,18 +1,8 @@
 <ng-container *ngIf="item.items">
-  <!-- <a (click)="toggleSection($event)" title="{{ item.title }}" href="#">
+  <a (click)="toggleSection($event)" title="{{ item.title }}" href="#">
     <i *ngIf="item.icon" class="{{ item.icon }}"></i>
     <span class="nav-link-text">{{ item.title }}</span>
     <span *ngIf="item.badge" class="{{item.badge.class}}">{{item.badge.label}}</span>
-    <b class="collapse-sign"
-      ><em
-        class="{{ item.open ? 'fal fa-angle-up' : 'fal fa-angle-down' }}"
-      ></em
-    ></b>
-  </a> -->
-  <a  title="Department" href="#">
-    <i *ngIf="item.icon" class="{{ item.icon }}"></i>
-    <span class="nav-link-text">{{ item.title }}</span>
-
     <b class="collapse-sign"
       ><em
         class="{{ item.open ? 'fal fa-angle-up' : 'fal fa-angle-down' }}"
@@ -24,27 +14,20 @@
     class="d-block ov-h"
     [@slideInOut]
   >
-  <li>Department</li>
-    <!-- <li
-      app-nav-item
+    <li
+      smart-nav-item
       *ngFor="let child of item.items; trackBy: trackByFn"
       [item]="child"
       [minified]="minified"
-    ></li> -->
+    ></li>
   </ul>
 </ng-container>
-<!-- <ng-container *ngIf="!item.items && item.routerLink">
+<ng-container *ngIf="!item.items && item.routerLink">
   <a routerLink="{{ item.routerLink }}" title="{{ item.title }}">
     <span class="nav-link-text">{{ item.title }}</span>
     <span *ngIf="item.badge" class="{{item.badge.class}}">{{item.badge.label}}</span>
   </a>
-</ng-container> -->
-<!-- <ng-container *ngIf="!item.items && item.routerLink">
-  <a routerLink="{{ item.routerLink }}" title="{{ item.title }}">
-    <span class="nav-link-text">{{ item.title }}</span>
-    <span *ngIf="item.badge" class="{{item.badge.class}}">{{item.badge.label}}</span>
-  </a>
-</ng-container> -->
+</ng-container>
 <ng-container *ngIf="item.navTitle">
   {{ item.title }}
 </ng-container>

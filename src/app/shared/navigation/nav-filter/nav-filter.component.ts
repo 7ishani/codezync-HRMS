@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
-//import { Store } from '@ngrx/store';
+// import { Store } from '@ngrx/store';
 
 // import { StoreModule } from '@ngrx/store';
 import { toggleFilter, selectFilter, navigationFilter } from 'src/app/store/navigation';
@@ -15,7 +15,7 @@ import { tap, throttleTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class NavFilterComponent implements OnDestroy {
 
-  //vm$ = this.store.select(selectFilter);
+  // vm$ = this.store.select(selectFilter);
 
   private sub = new SubSink();
   private textThrhottle$ = new Subject<string>();

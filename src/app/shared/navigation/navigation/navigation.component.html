@@ -1,5 +1,5 @@
 
-<nav id="js-primary-nav" class="primary-nav">
+<nav *ngIf="vm$ | async as vm" id="js-primary-nav" class="primary-nav" [class.h-100]="vm.fixedNavigation" role="navigation">
   <app-nav-filter></app-nav-filter>
   <app-nav-info-card></app-nav-info-card>
   <app-nav></app-nav>

@@ -13,7 +13,7 @@ export class SiderbarComponent {
   vm$ = this.store.select(selectFilter);
 
   constructor(private store: Store<any>) {
-  
+
    }
 
 // constructor(){}

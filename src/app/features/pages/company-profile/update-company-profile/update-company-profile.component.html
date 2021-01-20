@@ -10,48 +10,54 @@
           Basic Details
       </h2>
   </div>
+
+
+
   <div class="panel-container show">
-      <div class="panel-content">
-        <form action="/App/Create" enctype="multipart/form-data" method="post"><input name="__RequestVerificationToken" type="hidden" value="94CBdQCwCiKKaIh7_VmvVGxf8g19Q0D5Ir92sl-efEzEBQx1lHcWsgSdtU-M0zvjBfN4ckGrwa0GknoDLWqfQxj6knxVLDMU27EzShnUK9_5AlmbLpfWcTxzFlZZ2XrGTA3jQxgzhGivJbsYq280Qg2">
-          <div class="form-group">
-            <label class="form-label" for="Code">Company Name</label>
-            <input class="form-control text-box single-line"  id="Code" name="Code" type="text" value="Codezync">
-          </div>
+    <div class="panel-content">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label class="form-label" for="companyName">Company Name</label>
+          <input class="form-control text-box single-line"  formControlName="companyName" type="text" value="codezync">
+        </div>
 
-          <div class="form-group">
-            <label class="form-label" for="Code">Company logo</label>
-            <input class="form-control text-box single-line"  id="img" name="Code" type="file" accept="/image">
-          </div>
+        <!-- <div class="form-group">
+          <label class="form-label">Company Logo</label>
+          <input class="form-control text-box single-line"  formControlName="companyLogo" type="file" accept="/image">
+        </div> -->
 
-          <div class="form-group">
-            <label class="form-label" for="Code">Country</label>
-            <input class="form-control text-box single-line"  id="Code" name="Code" type="text" value="Sri Lanka">
-          </div>
+        <div class="form-group">
+          <label class="form-label">Company Logo</label><br>
+          <img src="assets/images/{{logo}}" alt="assets/images/{{logo}}" height="100"><br>
+          <input #file type="file" accept='image/*' (change)="preview(file.files)"/>
+        </div>
 
-          <div class="form-group">
-            <label class="form-label" for="Code">State/Province</label>
-            <input class="form-control text-box single-line"  id="Code" name="Code" type="text" value="Colombo">
-          </div>
+        <div class="form-group">
+          <label class="form-label">Country</label>
+          <input class="form-control text-box single-line"  formControlName="country" type="text" value="Sri Lanka">
+        </div>
 
-          <div class="form-group">
-            <label class="form-label" for="Code">Company address</label>
-            <input class="form-control text-box single-line"  id="Code" name="Code" type="text" value="No 24 1/1,Sir Ernest De Silva Mawatha, Colombo 3">
-          </div>
+        <div class="form-group">
+          <label class="form-label">State/Province</label>
+          <input class="form-control text-box single-line"  formControlName="state" type="text" value="Colombo">
+        </div>
 
-          <div class="form-group">
-            <label class="form-label" for="Code">Website</label>
-            <input class="form-control text-box single-line"  id="Code" name="Code" type="text" value="www.codezync.com">
-          </div>
+        <div class="form-group">
+          <label class="form-label">Company address</label>
+          <input class="form-control text-box single-line"  formControlName="address" type="text" value="No 24 1/1,Sir Ernest De Silva Mawatha, Colombo 3">
+        </div>
 
-          <div class="form-group">
-            <label class="form-label" for="Code">Phone</label>
-            <input class="form-control text-box single-line"  id="Code" name="Code" type="text" value="011-1234567">
-          </div>
-          <!-- <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0">
-          <button class="btn btn-primary waves-effect waves-themed" type="submit">Create</button>
-          </div> -->
+        <div class="form-group">
+          <label class="form-label">Website</label>
+          <input class="form-control text-box single-line"  formControlName="website" type="text" value="www.codezync.com">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input class="form-control text-box single-line" formControlName="phoneNumber" type="text" value="011-1234567">
+        </div>
       </form>
-      </div>
+    </div>
   </div>
 </div>
 
@@ -89,9 +95,7 @@
             <input class="form-control text-box single-line"  id="Code" name="Code" type="text" value="Software Company">
           </div>
 
-          <!-- <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0">
-          <button class="btn btn-primary waves-effect waves-themed" type="submit">Create</button>
-          </div> -->
+
       </form>
       </div>
   </div>
@@ -120,15 +124,12 @@
             <input class="form-control text-box single-line"  id="Code" name="Code" type="text" value="0%">
           </div>
 
-
-          <!-- <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0">
-          <button class="btn btn-primary waves-effect waves-themed" type="submit">Create</button>
-          </div> -->
       </form>
 
       </div>
       <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0">
         <button class="btn btn-primary waves-effect waves-themed" type="submit">Update</button>
+        <a class="btn btn-warning waves-effect waves-themed" href="/User/StoreOwners">Cancel</a>
     </div>
   </div>
 </div>

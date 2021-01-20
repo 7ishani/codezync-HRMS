@@ -32,7 +32,7 @@ export class NavItemComponent {
     $event.preventDefault();
     this.store.dispatch(toggleNavSection({ item: this.item }));
   }
-  
+
   trackByFn(idx: number, item: NavigationItem) {
     return item.title + '_' + idx;
   }

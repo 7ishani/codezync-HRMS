@@ -1,7 +1,30 @@
+// import { BrowserModule } from '@angular/platform-browser';
+// import { NgModule } from '@angular/core';
+
+// import { AppRoutingModule } from './app-routing.module';
+// import { AppComponent } from './app.component';
+// import { CoreModule } from './core/core.module';
+
+// @NgModule({
+//   declarations: [
+//     AppComponent,
+//   ],
+//   imports: [
+//     BrowserModule,
+//     AppRoutingModule,
+//     CoreModule,
+//   ],
+//   providers: [],
+//   bootstrap: [AppComponent]
+// })
+// export class AppModule { }
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
-
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AppComponent } from './app.component';
 
 import { RouterModule } from '@angular/router';
@@ -26,7 +49,7 @@ import { ViewEmployeeCategoryComponent } from './features/pages/employee-categor
 import { AddEmployeeCategoryComponent } from './features/pages/employee-category/add-employee-category/add-employee-category.component';
 import { ViewDepartmentComponent } from './features/pages/department/view-department/view-department.component';
 import { SettingsShortcutComponent } from './shared/layout/settings-shortcut/settings-shortcut.component';
-import { Store,StoreModule } from '@ngrx/store';
+import { Store, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { reducers, metaReducers, effects } from './store';
@@ -45,16 +68,18 @@ import { ViewSalaryTypeComponent } from './features/pages/salary-type/view-salar
 import { AddSalaryTypeComponent } from './features/pages/salary-type/add-salary-type/add-salary-type.component';
 import { ViewEmployeeDetailsComponent } from './features/pages/employee-details/view-employee-details/view-employee-details.component';
 import { AddEmployeeDetailsComponent } from './features/pages/employee-details/add-employee-details/add-employee-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 const appRoutes = [
-  {path:'listDepartments',component:DepartmentComponent},
-  {path:'listEmployeeCategory', component: EmployeeCategoryComponent},
-  {path:'listDesignation', component: DesignationComponent},
-  {path:'listCompensatation',component: CompensationComponent},
-  {path:'updateCompanyProfile',component: UpdateCompanyProfileComponent},
-  {path:'listSalaryTypes', component: SalaryTypeComponent},
-  {path:'listEmployees', component: EmployeeDetailsComponent},
-  {path:'addEmployee', component: AddEmployeeDetailsComponent}
+  {path: 'listDepartments', component: DepartmentComponent},
+  {path: 'listEmployeeCategory', component: EmployeeCategoryComponent},
+  {path: 'listDesignation', component: DesignationComponent},
+  {path: 'listCompensatation', component: CompensationComponent},
+  {path: 'updateCompanyProfile', component: UpdateCompanyProfileComponent},
+  {path: 'listSalaryTypes', component: SalaryTypeComponent},
+  {path: 'listEmployees', component: EmployeeDetailsComponent},
+  {path: 'addEmployee', component: AddEmployeeDetailsComponent}
 ];
 @NgModule({
   declarations: [
@@ -96,7 +121,9 @@ const appRoutes = [
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
+    TooltipModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers, {
@@ -109,8 +136,9 @@ const appRoutes = [
       },
     }),
     EffectsModule.forRoot([...effects]),
-    ModalModule.forRoot()
-   // Store
+    ModalModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

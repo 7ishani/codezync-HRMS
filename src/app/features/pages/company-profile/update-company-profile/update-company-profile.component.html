@@ -11,8 +11,6 @@
       </h2>
   </div>
 
-
-
   <div class="panel-container show">
     <div class="panel-content">
       <form (ngSubmit)="onSubmit()">
@@ -28,7 +26,7 @@
 
         <div class="form-group">
           <label class="form-label">Company Logo</label><br>
-          <img src="assets/images/{{logo}}" alt="assets/images/{{logo}}" height="100"><br>
+          <img [src]="imgURL" height="100"><br>
           <input #file type="file" accept='image/*' (change)="preview(file.files)"/>
         </div>
 

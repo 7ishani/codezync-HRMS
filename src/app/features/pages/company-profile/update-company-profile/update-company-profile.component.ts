@@ -8,9 +8,10 @@ import { APP_CONFIG } from 'src/app/app.config';
 export class UpdateCompanyProfileComponent implements OnInit {
 
   public imagePath;
-  imgURL: 'assets/images/{{logo}}';
+
   public message: string;
   logo= APP_CONFIG.logo;
+  imgURL: any;
 
   constructor()
   { }

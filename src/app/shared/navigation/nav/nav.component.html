@@ -1,13 +1,29 @@
-<!-- <ul id="js-nav-menu" class="nav-menu" *ngIf="vm$ | async as vm">
-  <li
-    app-nav-item
-    *ngFor="let item of vm.items; trackBy: trackByFn"
-    [item]="item"
-    [minified]="vm.minified"
-  ></li>
-</ul> -->
+<div id="js-primary-nav" class="primary-nav js-list-filter">
+  <ul id="js-nav-menu" class="nav-menu js-nav-built">
+    <li *ngFor="let menu of menus" [ngClass]="{'active': menu.active , 'sidebar-dropdown':menu.type === 'dropdown' , 'header-menu':menu.type === 'header'}">
 
-<div id="js-primary-nav" class="primary-nav js-list-filter" role="navigation">
+      <div class="title">
+        <li *ngIf="menu.type !== 'header'"  (click)='toggle(menu)'>
+          <i class="{{menu.icon}}"></i> &nbsp;
+          <span>{{menu.title}}</span>
+          <i class="fas fa-angle-down"></i>
+        </li>
+      </div>
+
+      <div *ngIf="menu.type === 'dropdown'" class="sidebar-submenu" [@slide]="getState(menu)">
+        <ul>
+          <li *ngFor="let submenu of menu.submenus">
+            <a href={{submenu.path}} class="nav-link-text"> {{submenu.title}}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </li>
+  </ul>
+</div>
+
+<!-- <div id="js-primary-nav" class="primary-nav js-list-filter" role="navigation">
   <ul id="js-nav-menu" class="nav-menu js-nav-built">
     <li class="nav-title">Human Resource</li>
       <li>
@@ -47,4 +63,4 @@
   </div>
 
 
-
+ -->

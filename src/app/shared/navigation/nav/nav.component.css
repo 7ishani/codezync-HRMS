@@ -1,3 +1,4 @@
+
 .nav-menu li {
   position: relative;
 }
@@ -80,7 +81,7 @@ a {
 .nav-menu ul {
   padding-left: 2rem;
   list-style: none;
-  display: none;
+  /* display: none; */
 }
 
 .nav-function-fixed:not(.nav-function-top) .page-sidebar .slimScrollDiv {
@@ -93,4 +94,37 @@ a {
   width:3px;
 }
 
+.fa-angle-down{
+  margin-left: 9rem;
 
+}
+
+.sidebar-submenu{
+  overflow: hidden;
+}
+
+.title{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  padding: 0.8125rem 2rem;
+  font-size: 0.875rem;
+  color:#b39ad8;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+}
+
+.title:hover{
+  color: rgb(255, 255, 255);
+  background-color: #b78bc2;
+}
+
+.nav-link-text:hover{
+  color:white;
+  background-color: #BA31DC;
+}

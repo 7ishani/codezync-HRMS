@@ -11,7 +11,7 @@ export class NavService {
 
  menus = [
    {
-      title: 'HR',
+      title: 'Human Resource',
       icon: 'fas fa-users',
       active: false,
       type: 'dropdown',
@@ -25,25 +25,52 @@ export class NavService {
           path: '/listEmployees'
         },
         {
-          title: 'Departments',
-          path: '/listDepartments'
-        },
-        {
-          title: 'Employee Category',
-          path: '/listEmployeeCategory'
-        },
-        {
-          title: 'Designations',
-          path: '/listDesignation'
-        },
-        {
-          title: 'Compensation Types',
-          path: '/listCompensatation'
-        },
-        {
-          title: 'Salary Types',
-          path: '/listSalaryTypes'
+          title: 'Settings',
+          path: '/settingsPage',
+          subs:[
+            {
+              titleSub: 'Departments',
+              pathSub: '/listDepartments'
+            },
+            {
+              titleSub: 'Employee Category',
+              pathSub: '/listEmployeeCategory'
+            },
+            {
+              titleSub: 'Departments',
+              pathSub: '/listDesignation'
+            },
+            {
+              titleSub: 'Compensation Types',
+              pathSub: '/listCompensatation'
+            },
+            {
+              titleSub: 'Salary Types',
+              pathSub:'/listSalaryTypes'
+            },
+
+          ]
         }
+        // {
+        //   title: 'Departments',
+        //   path: '/listDepartments'
+        // },
+        // {
+        //   title: 'Employee Category',
+        //   path: '/listEmployeeCategory'
+        // },
+        // {
+        //   title: 'Designations',
+        //   path: '/listDesignation'
+        // },
+        // {
+        //   title: 'Compensation Types',
+        //   path: '/listCompensatation'
+        // },
+        // {
+        //   title: 'Salary Types',
+        //   path: '/listSalaryTypes'
+        // }
       ]
    },
 

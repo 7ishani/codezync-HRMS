@@ -28,6 +28,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AppComponent } from './app.component';
 
 import { RouterModule } from '@angular/router';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { SiderbarComponent } from './shared/layout/siderbar/siderbar.component';
 import { LogoComponent } from './shared/layout/logo/logo.component';
@@ -69,6 +70,14 @@ import { AddSalaryTypeComponent } from './features/pages/salary-type/add-salary-
 import { ViewEmployeeDetailsComponent } from './features/pages/employee-details/view-employee-details/view-employee-details.component';
 import { AddEmployeeDetailsComponent } from './features/pages/employee-details/add-employee-details/add-employee-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { SettingsComponent } from './features/pages/settings/settings.component';
+import { EmployeeProfileComponent } from './features/pages/employee-profile/employee-profile.component';
+import { ViewEmployeeProfileComponent } from './features/pages/employee-profile/view-employee-profile/view-employee-profile.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatButtonModule } from '@angular/material/button';
+import { LoginPageComponent } from './features/pages/login-page/login-page.component';
+import { MainComponent } from './main/main.component';
 
 
 const appRoutes = [
@@ -79,7 +88,11 @@ const appRoutes = [
   {path: 'updateCompanyProfile', component: UpdateCompanyProfileComponent},
   {path: 'listSalaryTypes', component: SalaryTypeComponent},
   {path: 'listEmployees', component: EmployeeDetailsComponent},
-  {path: 'addEmployee', component: AddEmployeeDetailsComponent}
+  {path: 'addEmployee', component: AddEmployeeDetailsComponent},
+  {path: 'settingsPage', component: SettingsComponent},
+  {path: 'employee', component: EmployeeProfileComponent},
+  {path: '', component: LoginPageComponent},
+  // {path: 'main', component: MainComponent}
 ];
 @NgModule({
   declarations: [
@@ -117,7 +130,12 @@ const appRoutes = [
     ViewSalaryTypeComponent,
     AddSalaryTypeComponent,
     ViewEmployeeDetailsComponent,
-    AddEmployeeDetailsComponent
+    AddEmployeeDetailsComponent,
+    SettingsComponent,
+    EmployeeProfileComponent,
+    ViewEmployeeProfileComponent,
+    LoginPageComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -138,9 +156,16 @@ const appRoutes = [
     EffectsModule.forRoot([...effects]),
     ModalModule.forRoot(),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    TabsModule.forRoot(),
+    MDBBootstrapModule,
+    NgbModule,
+    MatButtonModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // exports: [
+  //   MaterialModule
+  // ]
 })
 export class AppModule { }

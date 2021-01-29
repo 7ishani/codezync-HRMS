@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APP_CONFIG } from 'src/app/app.config';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-update-company-profile',
   templateUrl: './update-company-profile.component.html',
@@ -13,7 +14,9 @@ export class UpdateCompanyProfileComponent implements OnInit {
   logo= APP_CONFIG.logo;
   imgURL: any;
 
-  constructor()
+  companyForm: FormGroup;
+
+  constructor(private fb: FormBuilder)
   { }
 
   ngOnInit(): void {

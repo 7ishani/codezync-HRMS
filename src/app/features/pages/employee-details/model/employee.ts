@@ -1,3 +1,5 @@
+import { EmailValidator } from "@angular/forms";
+
 export interface Employee{
   employeeID : string,
   initials: string,
@@ -12,5 +14,23 @@ export interface Employee{
   department: string,
   salaryType: string,
   amount: string,
-  joinedOn: Date
+  joinedOn: Date,
+  otherNames: string,
+  emailID: EmailValidator,
+  nic: string,
+  nationality: string,
+  religion: string,
+  passportNo: string,
+  licenseNo: string,
+  bloodGroup: string,
+  policeStation: string,
+  district: string,
+  profileImg: any,
+  EPFNo: string,
+  empGrade:string,
+  empType: string,
+  startDate: Date,
+  endDate: Date,
+  occuClassi: string,
+  advance: string
 }

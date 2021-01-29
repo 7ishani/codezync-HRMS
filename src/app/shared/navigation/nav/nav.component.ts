@@ -1,4 +1,7 @@
-import { Component} from '@angular/core';
+import { Component, ChangeDetectionStrategy} from '@angular/core';
+// import { Store, createSelector } from '@ngrx/store';
+// import { selectNavigationItems, NavigationItem } from 'src/app/store/navigation';
+// import { selectSettingsState } from 'src/app/store/settings';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { NavService } from './nav.service';
 
@@ -6,6 +9,7 @@ import { NavService } from './nav.service';
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css'],
+
   animations: [
     trigger('slide', [
       state('up', style({ height: 0 })),
@@ -39,16 +43,25 @@ export class NavComponent{
   }
 
   getState(currentMenu) {
-
     if (currentMenu.active) {
       return 'down';
     } else {
       return 'up';
     }
   }
+  // vm$ = this.store.select(
+  //   createSelector(
+  //     selectNavigationItems,
+  //     selectSettingsState,
+  //     (items, settings) => ({ items, minified: settings.minifyNavigation })
+  //   )
+  // );
 
-  // hasBackgroundImage() {
-  //   return this.navService.hasBackgroundImage;
+  // constructor(private store: Store<any>) { }
+
+  // trackByFn(idx: number, item: NavigationItem) {
+  //   return item.title + '_' + idx;
   // }
+
 
 }

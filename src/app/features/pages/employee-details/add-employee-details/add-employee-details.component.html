@@ -1,181 +1,470 @@
 <div id="panel-2" class="panel">
   <div class="panel-hdr">
       <h2>
-          Add Employee
+        Add Employee
       </h2>
   </div>
   <div class="panel-container show">
     <div class="panel-content">
       <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label class="form-label" for="empID">Employee ID</label>
-          <input class="form-control text-box single-line" placeholder="Enter Unique Code" type="text" formControlName="employeeID">
+        <div>
+          <tabset #formTabs>
+            <tab heading="Basic" id="tab1"><br>
+              <h4>Basic Information</h4>
+              <div class="form-group">
+                <label class="form-label" for="empID">Employee ID</label>
+                <input class="form-control text-box single-line" placeholder="Enter Unique Code" type="text" formControlName="employeeID">
 
-          <span *ngIf="!employeeID.valid && (employeeID.touched || userSubmitted)"
-            class="error-block">
-              Please provide ID
-          </span>
+                <span *ngIf="!employeeID.valid && (employeeID.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide ID
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="Initials">Initials</label>
+                <input class="form-control text-box single-line" formControlName="initials" placeholder="Enter Initials" type="text" value="">
+
+                <span *ngIf="!initials.valid && (initials.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide initials
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="firstName">First Name</label>
+                <input class="form-control text-box single-line" formControlName="firstName" placeholder="Enter First Name" type="text" value="">
+
+                <span *ngIf="!firstName.valid && (firstName.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide  First Name
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="lastName">Last Name</label>
+                <input class="form-control text-box single-line" formControlName="lastName" placeholder="Enter Last Name" type="text" value="">
+
+                <span *ngIf="!lastName.valid && (lastName.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Last Name
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control text-box single-line" formControlName="title" placeholder="Enter title" type="text" value="">
+
+                <span *ngIf="!title.valid && (title.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide initials
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="gender">Gender</label><br>
+                &nbsp; &nbsp; <input type="radio" name="gender" value="male">
+                &nbsp; <label>Male</label><br>
+                &nbsp; &nbsp; <input type="radio" name="gender" value="female">
+                &nbsp; <label>Female</label>
+
+                <span *ngIf="!gender.valid && (gender.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide yor gender
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="Name">Date of birth</label>
+                <input class="form-control text-box single-line" formControlName="dateOfBirth" id="Name" name="Name" placeholder="Enter Department Name" type="date" value="">
+
+                <span *ngIf="!dateOfBirth.valid && (dateOfBirth.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Date of Birth
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="employeeCategory">Employee Category</label>
+                  <select class="custom-select" formControlName="employeeCategory" ><option value="">Select Type</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Permanent">Permanent</option>
+                    <option value="Probation">Probation</option>
+                  </select>
+
+                  <span *ngIf="!employeeCategory.valid && (employeeCategory.touched || userSubmitted)"
+                  class="error-block">
+                    Please select employee category
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="Name">Leave Act</label>
+                <select class="custom-select" formControlName="leaveAct"><option value="">Select Leave Act</option>
+                  <!-- <option value="Contract">Contract</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Probation">Probation</option> -->
+                </select>
+
+                <span *ngIf="!leaveAct.valid && (leaveAct.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Leave Act
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="Name">Designation</label>
+                <select class="custom-select" formControlName="designation"><option value="">Select Designation</option>
+                  <!-- <option value="Contract">Contract</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Probation">Probation</option> -->
+                </select>
+                <span *ngIf="!designation.valid && (designation.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide designation
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="Name">Department</label>
+                <select class="custom-select" formControlName="department"><option value="">Select Department</option>
+                  <!-- <option value="Contract">Contract</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Probation">Probation</option> -->
+                </select>
+                <span *ngIf="!department.valid && (department.touched || userSubmitted)"
+                  class="error-block">
+                    Please select the department
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="Name">Salary Type</label>
+                <select class="custom-select" formControlName="salaryType"><option value="">Select Salary type</option>
+                  <!-- <option value="Contract">Contract</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Probation">Probation</option> -->
+                </select>
+                <span *ngIf="!salaryType.valid && (salaryType.touched || userSubmitted)"
+                  class="error-block">
+                    Please select the salary type
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="amount">Amount</label>
+                <select class="custom-select" formControlName="amount">
+                  <option value="" selected>Select Amount</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Probation">Probation</option>
+                </select>
+                <span *ngIf="!amount.valid && (amount.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide the amount
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="Name">Joined On</label>
+                <input class="form-control text-box single-line" formControlName="joinedOn" id="Name" name="Name" placeholder="Enter Department Name" type="date" value="">
+
+                <span *ngIf="!joinedOn.valid && (joinedOn.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide joined on date
+                </span>
+              </div>
+
+              <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0">
+
+                <button class="btn btn-primary waves-effect waves-themed" (click)="selectTab(1)" type="submit">Next</button>
+                <!-- <a class="btn btn-warning waves-effect waves-themed" href="">Cancel</a> -->
+              </div>
+            </tab>
+
+            <tab heading="Personal" id="tab2"><br>
+              <h4>Personal Information</h4>
+
+              <div class="form-group">
+                <label class="form-label" for="otherNames">Other Names</label>
+                <input class="form-control text-box single-line" placeholder="Enter other names" type="text" formControlName="otherNames">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emailID">Email ID</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Enter email ID" type="email" value="">
+
+                <span *ngIf="!emailID.valid && (emailID.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Email ID
+                </span>
+              </div>
+
+
+              <div class="form-group">
+                <label class="form-label" for="nic">NIC No</label>
+                <input class="form-control text-box single-line" formControlName="nic"  placeholder="Enter NIC No" type="text" value="">
+
+                <span *ngIf="!nic.valid && (nic.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide NIC No
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="nationality">Nationality</label>
+                <input class="form-control text-box single-line" formControlName="nationality"  placeholder="Enter Nationality" type=text value="">
+
+                <span *ngIf="!nationality.valid && (nationality.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Nationality
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="religion">Religion</label>
+                <input class="form-control text-box single-line" formControlName="religion"  placeholder="Enter religion" type="text" value="">
+
+                <span *ngIf="!religion.valid && (religion.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Religion
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="passportNo">Passport No</label>
+                <input class="form-control text-box single-line" formControlName="passportNo"  placeholder="Enter Passport No" type="text" value="">
+              </div>
+
+
+              <div class="form-group">
+                <label class="form-label" for="licenseNo">Driving License No</label>
+                <input class="form-control text-box single-line" formControlName="licenseNo"  placeholder="Enter driving lisence no" type="text" value="">
+             </div>
+
+              <div class="form-group">
+                <label class="form-label" for="bloodGroup">Blood Group</label>
+                <input class="form-control text-box single-line" formControlName="bloodGroup"  placeholder="Enter blood group" type="text" value="">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="policeStation">Police station</label>
+                <input class="form-control text-box single-line" formControlName="policeStation"  placeholder="Enter police station" type="text" value="">
+
+                <span *ngIf="!policeStation.valid && (policeStation.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide police station
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emailID">District</label>
+                <input class="form-control text-box single-line" formControlName="district"  placeholder="Enter district" type="text" value="">
+
+                <span *ngIf="!district.valid && (district.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide District
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="profileImg">Profile Image</label><br>
+                <img [src]="imgURL" height="100"><br>
+                <input #file type="file" accept='image/*' (change)="preview(file.files)"/>
+
+               <span *ngIf="!profileImg.valid && (profileImg.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Email ID
+                </span>
+             </div>
+
+             <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0">
+              <button class="btn btn-primary waves-effect waves-themed" (click)="selectTab(0)" type="submit">Back</button>
+              <button class="btn btn-primary waves-effect waves-themed" (click)="selectTab(2)" type="submit">Next</button>
+
+              <!-- <a class="btn btn-warning waves-effect waves-themed" href="">Cancel</a> -->
+            </div>
+
+            </tab>
+
+            <tab heading="Job" id="tab3"><br>
+              <h4>Job Information</h4>
+              <div class="form-group">
+                <label class="form-label" for="EPFNo">EPF Number</label>
+                <input class="form-control text-box single-line" formControlName="EPFNo"  placeholder="Enter EPF No" type="text" value="">
+
+                <span *ngIf="!EPFNo.valid && (EPFNo.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide EPF No
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="empGrade">Employee Grade</label>
+                <input class="form-control text-box single-line" formControlName="empGrade"  placeholder="Enter grade" type="text" value="">
+
+               <span *ngIf="!empGrade.valid && (empGrade.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Employee grade
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="empType">Employee Type</label>
+                <input class="form-control text-box single-line" formControlName="empType"  placeholder="Enter Employee type" type="text" value="">
+
+
+                <span *ngIf="!empType.valid && (empType.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Employee type
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="startDate">Start Date</label>
+                <input class="form-control text-box single-line" formControlName="startDate"  placeholder="Select start date" type="date" value="">
+
+                <span *ngIf="!startDate.valid && (startDate.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Start date
+                </span>
+             </div>
+
+              <div class="form-group">
+                <label class="form-label" for="endDate">End Date</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Select end date" type="date" value="">
+
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="occuClassi">Occupation Classification</label>
+                <input class="form-control text-box single-line" formControlName="occuClassi"  placeholder="Select occcupation" type="text" value="">
+
+                <span *ngIf="!occuClassi.valid && (occuClassi.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Occupation Classification
+                </span>
+               </div>
+
+              <!-- <div class="form-group">
+                <label class="form-label" for="salaryType">Salary Type</label>
+                <input class="form-control text-box single-line" formControlName="salaryType"  placeholder="Select salary type"  value="">
+
+                 <span *ngIf="!salaryType.valid && (salaryType.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Salary Type
+                </span>
+             </div> -->
+
+              <!-- <div class="form-group">
+                <label class="form-label" for="amount">Amount</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Enter amount" type="number" value="">
+
+              <span *ngIf="!amount.valid && (amount.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Amount
+                </span>
+               </div> -->
+
+              <div class="form-group">
+                <label class="form-label" for="advance">Maximum Advance Percentage</label>
+                <input class="form-control text-box single-line" formControlName="advance"  placeholder="Enter Advance Percentage" type="text" value="">
+
+                <span *ngIf="!advance.valid && (advance.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Advance percentage
+                </span>
+              </div>
+
+              <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0">
+                <button class="btn btn-primary waves-effect waves-themed" (click)="selectTab(1)" type="submit">Back</button>
+                <button class="btn btn-primary waves-effect waves-themed" type="submit">Save</button>
+                <button class="btn btn-warning waves-effect waves-themed" type="reset">Cancel</button>
+                <!-- <a class="btn btn-warning waves-effect waves-themed" href="">Cancel</a> -->
+              </div>
+
+
+
+          </tab>
+          </tabset>
         </div>
-
-        <div class="form-group">
-          <label class="form-label" for="Initials">Initials</label>
-          <input class="form-control text-box single-line" formControlName="initials" placeholder="Enter Initials" type="text" value="">
-
-          <span *ngIf="!initials.valid && (initials.touched || userSubmitted)"
-            class="error-block">
-              Please provide initials
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="firstName">First Name</label>
-          <input class="form-control text-box single-line" formControlName="firstName" placeholder="Enter First Name" type="text" value="">
-
-          <span *ngIf="!firstName.valid && (firstName.touched || userSubmitted)"
-            class="error-block">
-              Please provide  First Name
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="lastName">Last Name</label>
-          <input class="form-control text-box single-line" formControlName="lastName" placeholder="Enter Last Name" type="text" value="">
-
-          <span *ngIf="!lastName.valid && (lastName.touched || userSubmitted)"
-            class="error-block">
-              Please provide Last Name
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="title">Title</label>
-          <input class="form-control text-box single-line" formControlName="title" placeholder="Enter title" type="text" value="">
-
-          <span *ngIf="!title.valid && (title.touched || userSubmitted)"
-            class="error-block">
-              Please provide initials
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="gender">Gender</label><br>
-          &nbsp; &nbsp; <input type="radio" name="gender" value="male">
-          &nbsp; <label>Male</label><br>
-          &nbsp; &nbsp; <input type="radio" name="gender" value="female">
-          &nbsp; <label>Female</label>
-
-          <span *ngIf="!gender.valid && (gender.touched || userSubmitted)"
-            class="error-block">
-              Please provide yor gender
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="Name">Date of birth</label>
-          <input class="form-control text-box single-line" formControlName="dateOfBirth" id="Name" name="Name" placeholder="Enter Department Name" type="date" value="">
-
-          <span *ngIf="!dateOfBirth.valid && (dateOfBirth.touched || userSubmitted)"
-            class="error-block">
-              Please provide Date of Birth
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="employeeCategory">Employee Category</label>
-            <select class="custom-select" formControlName="employeeCategory" ><option value="">Select Type</option>
-              <option value="Contract">Contract</option>
-              <option value="Permanent">Permanent</option>
-              <option value="Probation">Probation</option>
-            </select>
-
-            <span *ngIf="!employeeCategory.valid && (employeeCategory.touched || userSubmitted)"
-            class="error-block">
-              Please select employee category
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="Name">Leave Act</label>
-          <select class="custom-select" formControlName="leaveAct"><option value="">Select Leave Act</option>
-            <!-- <option value="Contract">Contract</option>
-            <option value="Permanent">Permanent</option>
-            <option value="Probation">Probation</option> -->
-          </select>
-
-          <span *ngIf="!leaveAct.valid && (leaveAct.touched || userSubmitted)"
-            class="error-block">
-              Please provide Leave Act
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="Name">Designation</label>
-          <select class="custom-select" formControlName="designation"><option value="">Select Designation</option>
-            <!-- <option value="Contract">Contract</option>
-            <option value="Permanent">Permanent</option>
-            <option value="Probation">Probation</option> -->
-          </select>
-          <span *ngIf="!designation.valid && (designation.touched || userSubmitted)"
-            class="error-block">
-              Please provide designation
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="Name">Department</label>
-          <select class="custom-select" formControlName="department"><option value="">Select Department</option>
-            <!-- <option value="Contract">Contract</option>
-            <option value="Permanent">Permanent</option>
-            <option value="Probation">Probation</option> -->
-          </select>
-          <span *ngIf="!department.valid && (department.touched || userSubmitted)"
-            class="error-block">
-              Please select the department
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="Name">Salary Type</label>
-          <select class="custom-select" formControlName="salaryType"><option value="">Select Salary type</option>
-            <!-- <option value="Contract">Contract</option>
-            <option value="Permanent">Permanent</option>
-            <option value="Probation">Probation</option> -->
-          </select>
-          <span *ngIf="!salaryType.valid && (salaryType.touched || userSubmitted)"
-            class="error-block">
-              Please select the salary type
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="amount">Amount</label>
-          <select class="custom-select" formControlName="amount">
-            <option value="" selected>Select Amount</option>
-            <option value="Contract">Contract</option>
-            <option value="Permanent">Permanent</option>
-            <option value="Probation">Probation</option>
-          </select>
-          <span *ngIf="!amount.valid && (amount.touched || userSubmitted)"
-            class="error-block">
-              Please provide the amount
-          </span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="Name">Joined On</label>
-          <input class="form-control text-box single-line" formControlName="joinedOn" id="Name" name="Name" placeholder="Enter Department Name" type="date" value="">
-
-          <span *ngIf="!joinedOn.valid && (joinedOn.touched || userSubmitted)"
-            class="error-block">
-              Please provide joined on date
-          </span>
-        </div>
-
-        <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0">
-          <button class="btn btn-primary waves-effect waves-themed" type="submit">Create</button>
-          <a class="btn btn-warning waves-effect waves-themed" href="">Cancel</a>
-        </div>
-      </form>
+        </form>
     </div>
   </div>
 </div>
+
+
+              <!-- <div class="form-group">
+                <label class="form-label" for="emailID">Employee Type</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Enter emailID" type="email" value="">
+                 -->
+
+                <!-- <span *ngIf="!emailID.valid && (emailID.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Email ID
+                </span> -->
+              <!-- </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emailID">Start Date</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Select start date" type="date" value=""> -->
+
+                <!-- <span *ngIf="!emailID.valid && (emailID.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Email ID
+                </span> -->
+              <!-- </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emailID">End Date</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Select end date" type="date" value=""> -->
+
+                <!-- <span *ngIf="!emailID.valid && (emailID.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Email ID
+                </span> -->
+              <!-- </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emailID">Occupation Classification</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Select occcupation" type="email" value=""> -->
+
+                <!-- <span *ngIf="!emailID.valid && (emailID.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Email ID
+                </span> -->
+              <!-- </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emailID">Salary Type</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Select salary type"  value=""> -->
+
+                <!-- <span *ngIf="!emailID.valid && (emailID.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Email ID
+                </span> -->
+              <!-- </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emailID">Amount</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Enter amount" type="number" value=""> -->
+
+                <!-- <span *ngIf="!emailID.valid && (emailID.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Email ID
+                </span> -->
+              <!-- </div>
+
+              <div class="form-group">
+                <label class="form-label" for="emailID">Overtime Applicable</label>
+                <input class="form-control text-box single-line" formControlName="emailID"  placeholder="Enter emailID" type="email" value=""> -->
+
+                <!-- <span *ngIf="!emailID.valid && (emailID.touched || userSubmitted)"
+                  class="error-block">
+                    Please provide Email ID
+                </span> -->
+              <!-- </div> -->
+
+
+
+

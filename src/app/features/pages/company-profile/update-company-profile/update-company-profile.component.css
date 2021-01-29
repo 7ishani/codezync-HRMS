@@ -209,6 +209,8 @@ label {
   border-color: #2198F3;
 }
 .btn {
+  margin-left: 3rem;
+  margin-bottom: 1rem;
   display: inline-block;
   font-weight: 400;
   color: white;
@@ -247,4 +249,8 @@ label {
   box-shadow: 0 2px 6px 0 rgba(255, 154, 19, 0.5);
   color: black;
   margin-left: 2rem;
+}
+
+.employee-modal{
+  width: 1000px;
 }

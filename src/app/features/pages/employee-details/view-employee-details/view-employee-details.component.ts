@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeProfileService } from '../../employee-profile/employee-profile.service';
 
 @Component({
   selector: 'app-view-employee-details',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewEmployeeDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public employeeService: EmployeeProfileService ) { }
 
   ngOnInit(): void {
+  }
+
+  openEmployeeProfile($event: MouseEvent){
+    $event.preventDefault();
+    this.employeeService.openModal();
   }
 
 }

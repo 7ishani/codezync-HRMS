@@ -1,5 +1,7 @@
+import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { TabsetComponent } from 'ngx-bootstrap/tabs';
 import { Employee } from '../model/employee';
 @Component({
   selector: 'app-add-employee-details',
@@ -7,10 +9,15 @@ import { Employee } from '../model/employee';
   styleUrls: ['./add-employee-details.component.css']
 })
 export class AddEmployeeDetailsComponent implements OnInit {
+  @ViewChild('formTabs') formTabs: TabsetComponent;
 
   employeeForm: FormGroup;
   userSubmitted: boolean;
   employee: Employee
+
+  public imagePath;
+  imgURL: any;
+  public message: string;
 
   constructor(private fb: FormBuilder) { }
 
@@ -34,6 +41,25 @@ export class AddEmployeeDetailsComponent implements OnInit {
       salaryType: [null, Validators.required],
       amount: [null, Validators.required],
       joinedOn: [null, Validators.required],
+      otherNames: [null, Validators.nullValidator],
+      emailID: [null, Validators.required],
+      nic: [null, Validators.required],
+      nationality: [null, Validators.required],
+      religion: [null, Validators.required],
+      passportNo: [null, Validators.nullValidator],
+      licenseNo: [null, Validators.nullValidator],
+      bloodGroup: [null, Validators.nullValidator],
+      policeStation: [null, Validators.required],
+      district: [null, Validators.required],
+      profileImg: [null, Validators.required],
+      EPFNo: [null, Validators.required],
+      empGrade: [null, Validators.required],
+      empType: [null, Validators.required],
+      startDate: [null, Validators.required],
+      endDate: [null, Validators.required],
+      occuClassi: [null, Validators.required],
+      advance: [null, Validators.required]
+
     })
   }
 
@@ -95,6 +121,77 @@ export class AddEmployeeDetailsComponent implements OnInit {
     return this.employeeForm.get('joinedOn') as FormControl;
   }
 
+  get otherNames(){
+    return this.employeeForm.get('otherNames') as FormControl;
+  }
+
+  get emailID(){
+    return this.employeeForm.get('emailID') as FormControl;
+  }
+
+  get nic(){
+    return this.employeeForm.get('nic') as FormControl;
+  }
+
+  get nationality(){
+    return this.employeeForm.get('nationality') as FormControl;
+  }
+
+  get religion(){
+    return this.employeeForm.get('religion') as FormControl;
+  }
+
+  get passportNo(){
+    return this.employeeForm.get('passportNo') as FormControl;
+  }
+
+  get licenseNo(){
+    return this.employeeForm.get('licenseNo') as FormControl;
+  }
+
+  get bloodGroup(){
+    return this.employeeForm.get('bloodGroup') as FormControl;
+  }
+
+  get policeStation(){
+    return this.employeeForm.get('policeStation') as FormControl;
+  }
+
+  get district(){
+    return this.employeeForm.get('district') as FormControl;
+  }
+
+  get profileImg(){
+    return this.employeeForm.get('profileImg') as FormControl;
+  }
+
+  get EPFNo(){
+    return this.employeeForm.get('EPFNo') as FormControl;
+  }
+
+  get empGrade(){
+    return this.employeeForm.get('empGrade') as FormControl;
+  }
+
+  get empType(){
+    return this.employeeForm.get('empType') as FormControl;
+  }
+
+  get startDate(){
+    return this.employeeForm.get('startDate') as FormControl;
+  }
+
+  get endDate(){
+    return this.employeeForm.get('endDate') as FormControl;
+  }
+
+  get occuClassi(){
+    return this.employeeForm.get('occuClassi') as FormControl;
+  }
+
+  get advance(){
+    return this.employeeForm.get('advance') as FormControl;
+  }
 
 
   onSubmit(){
@@ -109,6 +206,28 @@ export class AddEmployeeDetailsComponent implements OnInit {
     else{
       console.log('not valid');
     }
+  }
+
+  preview(files){
+    if(files.length === 0)
+      return;
+
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = "Only images are supported.";
+      return;
+    }
+
+    var reader = new FileReader();
+      this.imagePath = files;
+      reader.readAsDataURL(files[0]);
+      reader.onload = (_event) => {
+        this.imgURL = reader.result;
+     }
+  }
+
+  selectTab(tabId: number) {
+    this.formTabs.tabs[tabId].active = true;
   }
 
   employeeData(): Employee{
@@ -126,7 +245,25 @@ export class AddEmployeeDetailsComponent implements OnInit {
       department: this.department.value,
       salaryType: this.salaryType.value,
       amount: this.amount.value,
-      joinedOn: this.joinedOn.value
+      joinedOn: this.joinedOn.value,
+      otherNames: this.otherNames.value,
+      emailID: this.emailID.value,
+      nic: this.nic.value,
+      nationality: this.nationality.value,
+      religion: this.religion.value,
+      passportNo: this.passportNo.value,
+      licenseNo: this.licenseNo.value,
+      bloodGroup: this.bloodGroup.value,
+      policeStation: this.policeStation.value,
+      district: this.district.value,
+      profileImg: this.profileImg.value,
+      EPFNo: this.EPFNo.value,
+      empGrade: this.empGrade.value,
+      empType: this.empType.value,
+      startDate: this.startDate.value,
+      endDate: this.endDate.value,
+      occuClassi: this.occuClassi.value,
+      advance: this.advance.value
     }
   }
 

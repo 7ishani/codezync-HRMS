@@ -1,77 +1,66 @@
-
-
-<!--
 <div class="row">
-  <div class="col-md-12"> -->
+  <div class="col-md-12">
     <div id="panel-1" class="panel">
       <div class="panel-hdr">
-        <h2>Designation Category List</h2>
+        <h2>Category List</h2>
       </div>
         <div class="panel-container show">
           <div class="panel-content">
+
             <table class="table table-bordered table-hover m-0">
               <thead class="thead-themed">
                 <tr>
-                  <th>Designation Categoty Code</th>
-                  <th>Designation</th>
+                  <!-- <th>Code</th> -->
+                  <th>Category</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>des_001</td>
-                  <td>Project Manager</td>
+                <tr (click)="openDepartments($event)">
+                  <!-- <td>dep_001</td> -->
+                  <td>Departments</td>
                   <td>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-edit mr-5"></i></a>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-trash-alt mr-1"></i></a>
+                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit" (click)="openDepartments($event)"><i class="fas fa-tasks"> </i></a>
                   </td>
                 </tr>
                 <tr>
-                  <td>des_002</td>
-                  <td>Software Engineer</td>
+                  <!-- <td>dep_002</td> -->
+                  <td>Employee Category</td>
                   <td>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-edit mr-5"></i></a>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-trash-alt mr-1"></i></a>
+                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"><i class="fas fa-tasks mr-5"></i></a>
                   </td>
                 </tr>
                 <tr>
-                  <td>des_003</td>
-                  <td>System Engineer</td>
+                  <!-- <td>dep_003</td> -->
+                  <td>Compensation Types</td>
                   <td>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-edit mr-5"></i></a>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-trash-alt mr-1"></i></a>
+                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"><i class="fas fa-tasks"></i></a>
                   </td>
                 </tr>
+
                 <tr>
-                  <td>des_004</td>
-                  <td>Business Analyst</td>
+                  <!-- <td>dep_003</td> -->
+                  <td>Salary Types</td>
                   <td>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-edit mr-5"></i></a>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-trash-alt mr-1"></i></a>
+                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"><i class="fas fa-tasks"></i></a>
                   </td>
                 </tr>
+
                 <tr>
-                  <td>des_005</td>
-                  <td>Web Analytics developer</td>
+                  <!-- <td>dep_003</td> -->
+                  <td>Designations</td>
                   <td>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-edit mr-5"></i></a>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-trash-alt mr-1"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>des_006</td>
-                  <td>Web Master</td>
-                  <td>
-                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-edit mr-5"></i></a>
-                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-trash-alt mr-1"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>des_007</td>
-                  <td>Social Media Manager</td>
-                  <td>
-                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-edit mr-5"></i></a>
-                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-trash-alt mr-1"></i></a>
+                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"></a><i class="fas fa-tasks"></i>
                   </td>
                 </tr>
               </tbody>
@@ -79,7 +68,7 @@
         </div>
 
     </div>
-  <!-- </div>
-</div> -->
+  </div>
+</div>
 
 

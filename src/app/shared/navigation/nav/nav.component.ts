@@ -20,10 +20,13 @@ import { NavService } from './nav.service';
 })
 export class NavComponent{
   menus = [];
+  subMenus = [];
 
   constructor(public navService: NavService) {
     this.menus = navService.getMenuList();
+    this.subMenus = navService.getSubMenuList();
     console.log(this.menus);
+    console.log(this.subMenus);
   }
 
   getSideBarState() {
@@ -42,6 +45,18 @@ export class NavComponent{
     }
   }
 
+  toggleSub(currentMenu) {
+    if (currentMenu.type === 'dropdownSub') {
+      this.menus.forEach(element => {
+        if (element === currentMenu) {
+          currentMenu.activeSub = !currentMenu.activeSub;
+        } else {
+          element.activeSub = false;
+        }
+      });
+    }
+  }
+
   getState(currentMenu) {
     if (currentMenu.active) {
       return 'down';
@@ -49,19 +64,14 @@ export class NavComponent{
       return 'up';
     }
   }
-  // vm$ = this.store.select(
-  //   createSelector(
-  //     selectNavigationItems,
-  //     selectSettingsState,
-  //     (items, settings) => ({ items, minified: settings.minifyNavigation })
-  //   )
-  // );
 
-  // constructor(private store: Store<any>) { }
-
-  // trackByFn(idx: number, item: NavigationItem) {
-  //   return item.title + '_' + idx;
-  // }
+  getStateSub(currentMenu) {
+    if (currentMenu.activeSub) {
+      return 'down';
+    } else {
+      return 'up';
+    }
+  }
 
 
 }

@@ -30,6 +30,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
+
 import { SiderbarComponent } from './shared/layout/siderbar/siderbar.component';
 import { LogoComponent } from './shared/layout/logo/logo.component';
 import { ShortcutModelComponent } from './shared/layout/shortcut-model/shortcut-model.component';
@@ -78,6 +79,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginPageComponent } from './features/pages/login-page/login-page.component';
 import { MainComponent } from './main/main.component';
+import { ViewSettingsComponent } from './features/pages/settings/view-settings/view-settings.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes = [
@@ -135,7 +138,8 @@ const appRoutes = [
     EmployeeProfileComponent,
     ViewEmployeeProfileComponent,
     LoginPageComponent,
-    MainComponent
+    MainComponent,
+    ViewSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -160,7 +164,8 @@ const appRoutes = [
     TabsModule.forRoot(),
     MDBBootstrapModule,
     NgbModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -24,53 +23,6 @@ export class NavService {
           title: 'Employees',
           path: '/listEmployees'
         },
-        {
-          title: 'Settings',
-          path: '/settingsPage',
-          subs:[
-            {
-              titleSub: 'Departments',
-              pathSub: '/listDepartments'
-            },
-            {
-              titleSub: 'Employee Category',
-              pathSub: '/listEmployeeCategory'
-            },
-            {
-              titleSub: 'Departments',
-              pathSub: '/listDesignation'
-            },
-            {
-              titleSub: 'Compensation Types',
-              pathSub: '/listCompensatation'
-            },
-            {
-              titleSub: 'Salary Types',
-              pathSub:'/listSalaryTypes'
-            },
-
-          ]
-        }
-        // {
-        //   title: 'Departments',
-        //   path: '/listDepartments'
-        // },
-        // {
-        //   title: 'Employee Category',
-        //   path: '/listEmployeeCategory'
-        // },
-        // {
-        //   title: 'Designations',
-        //   path: '/listDesignation'
-        // },
-        // {
-        //   title: 'Compensation Types',
-        //   path: '/listCompensatation'
-        // },
-        // {
-        //   title: 'Salary Types',
-        //   path: '/listSalaryTypes'
-        // }
       ]
    },
 
@@ -88,6 +40,38 @@ export class NavService {
   //  }
  ];
 
+ subs = [
+  {
+     title: 'Settings',
+     icon: 'fas fa-users',
+     activeSub: false,
+     type: 'dropdownSub',
+     subs: [
+        {
+         title: 'Departments',
+         path: '/listDepartments'
+       },
+       {
+         title: 'Employee Category',
+         path: '/listEmployeeCategory'
+       },
+       {
+         title: 'Designations',
+         path: '/listDesignation'
+       },
+       {
+         title: 'Compensation Types',
+         path: '/listCompensatation'
+       },
+       {
+         title: 'Salary Types',
+         path: '/listSalaryTypes'
+       }
+     ]
+  },
+];
+
+
   toggle() {
     this.toggled = ! this.toggled;
   }
@@ -102,6 +86,10 @@ export class NavService {
 
   getMenuList() {
     return this.menus;
+  }
+
+  getSubMenuList(){
+    return this.subs;
   }
 }
 

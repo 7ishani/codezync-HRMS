@@ -15,7 +15,6 @@
   text-shadow: #fff 0 1px;
 }
 
-
 .page-content .panel {
   margin-bottom: 1.5rem;
   min-width: 992px;
@@ -24,7 +23,7 @@
 .panel {
   min-width: fit-content;
   margin-left:2rem;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -170,6 +169,7 @@ select {
   background-color: #2198F3;
   border-color: #2198F3;
   margin-right: 2rem;
+
 }
 
 .btn{
@@ -251,7 +251,8 @@ select {
   border: 1px solid #dbe4ec;
 }
 .table {
-  width: 100%;
+ min-width: 200px;
+
   margin-bottom: 1rem;
   color: #212529;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
@@ -269,6 +270,10 @@ table {
 
 .fa-trash-alt{
   color: red;
+  margin-left: 1rem;
 }
 
-
+.fa-tasks{
+  color:green;
+  margin-left: 3rem
+}

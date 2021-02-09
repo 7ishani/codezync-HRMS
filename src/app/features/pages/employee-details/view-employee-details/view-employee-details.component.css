@@ -276,6 +276,22 @@ table {
   color: red;
 }
 
+.fa-edit{
+  color: blue;
+}
+
+
+.modal .modal-dialog-aside{
+	width: 1200px;
+	max-width:80%; height: 100%; margin:0;
+	transform: translate(0); transition: transform .2s;
+}
+
+.modal.fixed-left .modal-dialog-aside{ margin-left:auto;  transform: translateX(100%); }
+
+.modal .modal-dialog-aside .modal-content{  height: inherit; border:0; border-radius: 0;}
+.modal .modal-dialog-aside .modal-content .modal-body{ overflow-y: auto }
+.modal.show .modal-dialog-aside{ transform: translateX(0);  }
 
 .rounded-circle {
   border-radius: 50% !important;
@@ -283,3 +299,7 @@ table {
   width: 3.5rem;
 }
 
+.fa-plus{
+  color: green;
+  margin-left: 2rem;
+}

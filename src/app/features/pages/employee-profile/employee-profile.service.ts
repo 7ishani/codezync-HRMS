@@ -10,10 +10,15 @@ export class EmployeeProfileService {
 
   constructor(private modalService: BsModalService) { }
 
-  public openModal() {
-    this.bsModalRef = this.modalService.show(EmployeeProfileComponent,
-      {
-        class:"modal-xl"
-      });
+  // public openModal() {
+  //   this.bsModalRef = this.modalService.show(EmployeeProfileComponent,
+  //     {
+  //       class:"modal_aside_left"
+  //     });
+  // }
+
+   public openModal() {
+     console.log('open');
+    this.modalService.show(EmployeeProfileComponent,{});
   }
 }

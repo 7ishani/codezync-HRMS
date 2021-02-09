@@ -12,20 +12,18 @@
           </li>
         </ul>
         <ul>
-          <li *ngFor="let subMenu of subMenus" [ngClass]="{'activeSub': subMenu.activeSub , 'sidebar-dropdownSub':subMenu.type === 'dropdownSub' , 'header-menu':subMenu.type === 'header'}">
+          <li *ngFor="let subMenu of subMenus" [ngClass]="{'active': subMenu.activeSub , 'sidebar-dropdown':subMenu.type === 'dropdown' , 'header-menu':subMenu.type === 'header'}">
             <ul class="title" *ngIf="subMenu.type !== 'header'" (click)='toggleSub(subMenu)'>
               <span>{{subMenu.title}}</span>
               <i class="fas fa-chevron-down fa-xs"></i>
             </ul>
-            <div *ngIf="subMenu.type === 'dropdownSub'" class="sidebar-submenusub" [@slide]="getStateSub(subMenu)">
+            <!-- <div *ngIf="subMenu.type === 'dropdown'" class="sidebar-submenu" [@slide]="getStateSub(subMenu)"> -->
+              <div>
               <ul>
-                <li>dep</li>
-              </ul>
-              <!-- <ul>
                 <li *ngFor="let submenu of subMenu.subs">
                   <a href={{submenu.path}}> {{submenu.title}} </a>
                 </li>
-              </ul> -->
+              </ul>
             </div>
           </li>
         </ul>

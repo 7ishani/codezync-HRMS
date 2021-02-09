@@ -1,14 +1,14 @@
 <div class="page-wrapper">
   <div class="page-inner">
-    <app-siderbar></app-siderbar>
+    <app-siderbar *ngIf="showHead"></app-siderbar>
       <div class="page-content-wrapper">
-        <app-page-header></app-page-header>
+        <app-page-header *ngIf="showHead"></app-page-header>
       </div>
       <main id="js-page-content" role="main" class="page-content">
         <router-outlet></router-outlet>
       </main>
   </div>
-  <app-page-footer></app-page-footer>
+  <app-page-footer *ngIf="showHead"></app-page-footer>
 </div>
 <!-- <app-login-page></app-login-page> -->
 

@@ -23,7 +23,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr (click)="openEmployeeProfile($event)" data-toggle="modal" data-target="#employeeModal">
+                <!-- <tr (click)="openEmployeeProfile($event)" data-toggle="modal" data-target="#modal_aside_left"> -->
+                  <tr>
                   <td style="text-align:center">
                     <img
                       src="/assets/images/boy.jpg"
@@ -39,8 +40,9 @@
                   <td>Senior Software Engineer</td>
                   <td>01-02-2020</td>
                   <td>
-                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-edit mr-5"></i></a>
+                    <a data-toggle="modal" data-target="#modal_aside_left" (click)="openModal()"><i class="far fa-edit mr-5"></i> </a>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-trash-alt mr-1"></i></a>
+                    <a data-toggle="modal" data-target="#modal_resign"> <i class="fas fa-plus"></i></a>
                   </td>
                 </tr>
                 <tr>
@@ -59,7 +61,7 @@
                   <td>Senior Software Engineer</td>
                   <td>01-02-2020</td>
                   <td>
-                    <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-edit mr-5"></i></a>
+                    <a data-toggle="modal" data-target="#modal_aside_left"> <i class="far fa-edit mr-5"></i></a>
                     <a href="/User/Edit/5ff687638cbfe32f88aef244" data-toggle="tooltip" data-original-title="Edit"> <i class="far fa-trash-alt mr-1"></i></a>
                   </td>
                 </tr>
@@ -92,3 +94,268 @@
 </div>
 
 
+<!-- <div id="modal_aside_left" class="modal fixed-left fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-aside" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Aneef Fashir</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <tabset>
+          <tab heading="Basic" id="tab1">
+            <div class="row">
+              <div class="col-md-4">
+                <div id="panel-1" class="panel">
+                  <div class="panel-hdr">
+                    <h2>Profile</h2>
+                  </div>
+                  <div class="panel-container show">
+                    <div class="panel-content">
+                      <div class="panel-body">
+                        <img class="img-responsive" src="assets/images/boy.jpg" class="img-rounded" id="Panel_Image" width="70" height="100" >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="panel-1" class="panel">
+                  <div class="panel-hdr">
+                    <h2>Other Details</h2>
+                  </div>
+                  <div class="panel-container show">
+                    <div class="panel-content">
+                      <form>
+                        <div class="form-group">
+                          <label class="form-label" for="companyName">Employee Category</label>
+                            <input class="form-control text-box single-line"  type="text" value="001">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Leave Act</label>
+                            <input class="form-control text-box single-line"  type="text" value="001">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Salary Type</label>
+                            <input class="form-control text-box single-line"  type="text" value="001">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Amount</label>
+                            <input class="form-control text-box single-line"  type="text" value="001">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Joined On</label>
+                            <input class="form-control text-box single-line"  type="date" value="2020-01-01">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-8">
+                  <div id="panel-1" class="panel">
+                    <div class="panel-hdr">
+                      <h2>Basic Information</h2>
+                    </div>
+                    <div class="panel-container show">
+                      <div class="panel-content">
+                        <form>
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Employee ID</label>
+                            <input class="form-control text-box single-line"  type="text" value="001">
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">First Name</label>
+                            <input class="form-control text-box single-line"  type="text" value="Aneef">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Last Name</label>
+                            <input class="form-control text-box single-line"  type="text" value="Fashir">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Gender</label>
+                            <input class="form-control text-box single-line"  type="text" value="Male">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Date of Birth</label>
+                            <input class="form-control text-box single-line"  type="date" value="01/01/1980">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Designation</label>
+                            <input class="form-control text-box single-line"  type="text" value="CEO">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Department</label>
+                            <input class="form-control text-box single-line"  type="date" value="001">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </tab>
+
+            <tab heading="Personal">
+              <div class="row">
+                <div class="col-md-6">
+                  <div id="panel-1" class="panel">
+                    <div class="panel-hdr">
+                      <h2>Personal Details</h2>
+                    </div>
+                    <div class="panel-container show">
+                      <div class="panel-content">
+                        <form>
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Other Names</label>
+                              <input class="form-control text-box single-line"  type="text" value="Aneef">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Email ID</label>
+                              <input class="form-control text-box single-line"  type="text" value="aneef@codezync.com">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">NIC No</label>
+                              <input class="form-control text-box single-line"  type="text" value="********V">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Nationality</label>
+                              <input class="form-control text-box single-line"  type="text" value="Muslim">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Religion</label>
+                              <input class="form-control text-box single-line"  type="text" value="Islam">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Blood Group</label>
+                              <input class="form-control text-box single-line"  type="text" value="A+">
+                            </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div id="panel-1" class="panel">
+                    <div class="panel-hdr">
+                      <h2>Other Details</h2>
+                    </div>
+                    <div class="panel-container show">
+                      <div class="panel-content">
+                        <form>
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Passport No</label>
+                            <input class="form-control text-box single-line"  type="text" value="100052006">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Driving License No</label>
+                            <input class="form-control text-box single-line"  type="text" value="100052006">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Passport No</label>
+                            <input class="form-control text-box single-line"  type="text" value="100052006">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">Police Station</label>
+                            <input class="form-control text-box single-line"  type="text" value="Dehiwala">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="companyName">District</label>
+                            <input class="form-control text-box single-line"  type="text" value="Colombo">
+                          </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </tab>
+            <tab heading="Job">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="panel-1" class="panel">
+                    <div class="panel-hdr">
+                      <h2>Job Details</h2>
+                    </div>
+                    <div class="panel-container show">
+                      <div class="panel-content">
+                        <form>
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">EPF Number</label>
+                              <input class="form-control text-box single-line"  type="text" value="EPF-0045096">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Employee Grade</label>
+                              <input class="form-control text-box single-line"  type="text" value="Highest">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Employee Type</label>
+                              <input class="form-control text-box single-line"  type="text" value="CEO">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Start Date</label>
+                              <input class="form-control text-box single-line"  type="date" value="2016-01-01">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">End Date</label>
+                              <input class="form-control text-box single-line"  type="date" value="0000-00-00">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Occupation Classification</label>
+                              <input class="form-control text-box single-line"  type="text" value="CEO">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="form-label" for="companyName">Maximum Advance Percentage</label>
+                              <input class="form-control text-box single-line"  type="text" value="50%">
+                            </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </tab>
+          </tabset>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->

@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'assets/forms.css';
 
 @import "../node_modules/argon-design-system-free/assets/css/nucleo-icons.css";
 @import "../node_modules/argon-design-system-free/assets/css/font-awesome.css";
+
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,7 +1,8 @@
 body {
   font-family: "Karla", sans-serif;
   background-color: #d0d0ce;
-  min-height: 100vh; }
+  min-height: 100vh;
+}
 
 .brand-wrapper {
   margin-bottom: 19px; }
@@ -78,5 +79,3 @@ body {
   .login-card-footer-nav a {
     font-size: 14px;
     color: #919aa3; }
-
-/*# sourceMappingURL=login.css.map */

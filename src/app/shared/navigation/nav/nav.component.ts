@@ -46,12 +46,12 @@ export class NavComponent{
   }
 
   toggleSub(currentMenu) {
-    if (currentMenu.type === 'dropdownSub') {
+    if (currentMenu.type === 'dropdown') {
       this.menus.forEach(element => {
         if (element === currentMenu) {
-          currentMenu.activeSub = !currentMenu.activeSub;
+          currentMenu.active = !currentMenu.active;
         } else {
-          element.activeSub = false;
+          element.active = false;
         }
       });
     }
@@ -66,7 +66,7 @@ export class NavComponent{
   }
 
   getStateSub(currentMenu) {
-    if (currentMenu.activeSub) {
+    if (currentMenu.active) {
       return 'down';
     } else {
       return 'up';

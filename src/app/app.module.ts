@@ -81,6 +81,11 @@ import { LoginPageComponent } from './features/pages/login-page/login-page.compo
 import { MainComponent } from './main/main.component';
 import { ViewSettingsComponent } from './features/pages/settings/view-settings/view-settings.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { DropdownAppsComponent } from './shared/layout/dropdown-apps/dropdown-apps.component';
+import { DropdownUserComponent } from './shared/layout/dropdown-user/dropdown-user.component';
+import { ResignEmployeeComponent } from './features/pages/employee-profile/resign-employee/resign-employee.component';
+
 
 
 const appRoutes = [
@@ -95,6 +100,7 @@ const appRoutes = [
   {path: 'settingsPage', component: SettingsComponent},
   {path: 'employee', component: EmployeeProfileComponent},
   {path: '', component: LoginPageComponent},
+  {path: 'home', component: HomeComponent}
   // {path: 'main', component: MainComponent}
 ];
 @NgModule({
@@ -139,7 +145,11 @@ const appRoutes = [
     ViewEmployeeProfileComponent,
     LoginPageComponent,
     MainComponent,
-    ViewSettingsComponent
+    ViewSettingsComponent,
+    HomeComponent,
+    DropdownAppsComponent,
+    DropdownUserComponent,
+    ResignEmployeeComponent
   ],
   imports: [
     BrowserModule,

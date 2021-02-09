@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'codezync-HRMS';
-  // isShown: boolean;
 
-  // ngOnInit(){
-  //   this.isShown = false;
-  // }
+  showHead: boolean = false;
 
-  // toggleShow(){
-  //   this.isShown =! this.isShown;
-  // }
+  constructor(
+    private router:Router,
 
-  ngOnInit(){}
+  ){}
+
+  ngOnInit(){
+    this.router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        if (event['url'] == '/') {
+          this.showHead = false;
+        } else {
+          // console.log("NU")
+          this.showHead = true;
+        }
+      }
+    });
+  }
 
 }

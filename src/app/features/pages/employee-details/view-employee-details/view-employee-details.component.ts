@@ -13,9 +13,17 @@ export class ViewEmployeeDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openEmployeeProfile($event: MouseEvent){
-    $event.preventDefault();
-    this.employeeService.openModal();
+  // openEmployeeProfile($event: MouseEvent){
+  //   $event.preventDefault();
+  //   this.employeeService.openModal();
+  // }
+
+  openEmployeeProfile(){
+   this.employeeService.openModal();
+  }
+
+  openModal(){
+    
   }
 
 }

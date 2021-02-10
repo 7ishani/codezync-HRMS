@@ -21,7 +21,7 @@
 
 
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -80,13 +80,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginPageComponent } from './features/pages/login-page/login-page.component';
 import { MainComponent } from './main/main.component';
 import { ViewSettingsComponent } from './features/pages/settings/view-settings/view-settings.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { DropdownAppsComponent } from './shared/layout/dropdown-apps/dropdown-apps.component';
 import { DropdownUserComponent } from './shared/layout/dropdown-user/dropdown-user.component';
 import { ResignEmployeeComponent } from './features/pages/employee-profile/resign-employee/resign-employee.component';
-
-
+import { TokenInterceptor } from './helpers/token.interceptor';
+import { LoginApiService } from './features/pages/login-page/login-api.service';
 
 const appRoutes = [
   {path: 'listDepartments', component: DepartmentComponent},
@@ -177,7 +177,10 @@ const appRoutes = [
     MatButtonModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    //{ provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [LoginApiService] },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
   // exports: [
   //   MaterialModule

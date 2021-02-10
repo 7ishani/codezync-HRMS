@@ -94,7 +94,7 @@
 </div>
 
 
-<!-- <div id="modal_aside_left" class="modal fixed-left fade" tabindex="-1" role="dialog">
+<div id="modal_aside_left" class="modal fixed-left fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-aside" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -351,6 +351,62 @@
             </tab>
           </tabset>
 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="modal_resign" class="modal fixed-left fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-aside" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Resignation Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label class="form-label" for="empID">Resignation Submitted On</label>
+            <input class="form-control text-box single-line" placeholder="Enter Unique Code" type="text" formControlName="employeeID">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="empID">Reson for leaving</label>
+            <select class="custom-select" formControlName="leaveAct"><option value="">Resigned</option>
+            </select>
+
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="empID">Days</label>
+            <select class="custom-select" formControlName="leaveAct"><option value="">1</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="empID">Short Fall in notice period</label>
+            <select class="custom-select" formControlName="leaveAct"><option value="">Resigned</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="empID">Tentative leaving date</label>
+            <select class="custom-select" formControlName="leaveAct"><option value="">Resigned</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="empID">Remarks</label>
+            <input class="form-control text-box single-line" placeholder="Enter Unique Code" type="text" formControlName="employeeID">
+          </div>
+
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -360,58 +360,105 @@
   </div>
 </div>
 
-<!-- <div id="modal_resign" class="modal fixed-left fade" tabindex="-1" role="dialog">
+<div id="modal_resign" class="modal fixed-left fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-aside" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Resignation Details</h4>
+        <h3 class="modal-title" id="exampleModalLabel">Resignation Details</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label class="form-label" for="empID">Resignation Submitted On</label>
-            <input class="form-control text-box single-line" placeholder="Enter Unique Code" type="text" formControlName="employeeID">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <div id="panel-1" class="panel">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress">Resignation Submitted On</label>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="inputZip">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress">Reason for leaving</label>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">&nbsp; &nbsp; &nbsp;
+                    <label class="form-check-label" for="gridCheck">
+                      Notice Required
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress">Notice Period</label>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress">Short Fall in Notice period</label>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress">Tentative leaving Date</label>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="inputZip">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress">Remarks</label>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <div class="input-group">
+                      <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </form>
+            </div>
           </div>
-
-          <div class="form-group">
-            <label class="form-label" for="empID">Reson for leaving</label>
-            <select class="custom-select" formControlName="leaveAct"><option value="">Resigned</option>
-            </select>
-
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="empID">Days</label>
-            <select class="custom-select" formControlName="leaveAct"><option value="">1</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="empID">Short Fall in notice period</label>
-            <select class="custom-select" formControlName="leaveAct"><option value="">Resigned</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="empID">Tentative leaving date</label>
-            <select class="custom-select" formControlName="leaveAct"><option value="">Resigned</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="empID">Remarks</label>
-            <input class="form-control text-box single-line" placeholder="Enter Unique Code" type="text" formControlName="employeeID">
-          </div>
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+          <div class="col-md-1"></div>
+        </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>

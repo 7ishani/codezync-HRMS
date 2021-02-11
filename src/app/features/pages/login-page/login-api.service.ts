@@ -27,6 +27,7 @@ export class LoginApiService {
 
     private tokenExpirationTimer: any;
     currentUserData = new BehaviorSubject<UserAuth>(null);
+    userInform = new BehaviorSubject(null);
 
     private userSubject: BehaviorSubject<AuthResponse>;
     public user: Observable<AuthResponse>;
@@ -64,7 +65,8 @@ export class LoginApiService {
               // this.authenticateUser(res);
               this.storeToken(res);
               this.router.navigate(['/home']);
-              this.alertify.success('You have successfully logged!')
+              this.alertify.success('You have successfully logged!');
+
 
             }, error => {
               console.log(error);
@@ -85,10 +87,10 @@ export class LoginApiService {
     userLogout(){
         debugger;
 
-        let token = JSON.parse(localStorage.getItem('userData'));
-        const body = { Token: token.access_token};
+        let token = localStorage.getItem('token');
+        const body = { Token: token};
         const header = new HttpHeaders().set(
-            "Authorization", `Bearer ${token.access_token}`
+            "Authorization", `Bearer ${token}`
         );
 
         this.http.post<any>(this.baseUrl+'api/auth/logout', body, {headers: header})
@@ -103,7 +105,9 @@ export class LoginApiService {
             );
     }
 
-    refreshToken() {
+    callRefreshToken(payload) {
+      console.log('refresh');
+      debugger;
         let refreshHeader = new HttpHeaders();
 
         refreshHeader.set("Authorization", `Bearer ${this.getRefreshToken()}`);
@@ -118,12 +122,7 @@ export class LoginApiService {
         body.set('Password','123456');
 
         return this.http.post<AuthResponse>(this.baseUrl+'connect/token',  body.toString(), {
-            headers: refreshHeader}).subscribe(res =>{
-              console.log(res);
-              this.storeToken(res);
-            }, error => {
-              console.log(error);
-            })
+            headers: refreshHeader});
         }
 
     private getRefreshToken() {
@@ -140,16 +139,19 @@ export class LoginApiService {
       	    AuthResponse.SessionId
         );
 
-        console.log(token);
+        debugger;
+        console.log("token "+token);
+        console.log(AuthResponse.expires_in);
+
         this.currentUserData.next(token);
         // this.autoLogout(AuthResponse.expires_in);
 
-      
+
         localStorage.setItem('userData', JSON.stringify(token));
         // localStorage.setItem('token', JSON.stringify(token.accessToken));
-        localStorage.setItem('token', token.accessToken);
+        localStorage.setItem('token', token.accessToken+"********");
         localStorage.setItem('refreshToken', token.refreshToken);
-        localStorage.setItem(expiration, token.expires_in);
+        localStorage.setItem('expiration', AuthResponse.expires_in);
     }
 
     private removeToken(){
